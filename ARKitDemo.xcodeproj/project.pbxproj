@@ -15,6 +15,7 @@
 		C077A5892110D2AA00A534E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C077A5872110D2AA00A534E9 /* LaunchScreen.storyboard */; };
 		C077A5942110D2AA00A534E9 /* ARKitDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077A5932110D2AA00A534E9 /* ARKitDemoTests.swift */; };
 		C077A59F2110D2AA00A534E9 /* ARKitDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077A59E2110D2AA00A534E9 /* ARKitDemoUITests.swift */; };
+		C077A5B121112DA500A534E9 /* ARUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077A5B021112DA500A534E9 /* ARUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C077A59A2110D2AA00A534E9 /* ARKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C077A59E2110D2AA00A534E9 /* ARKitDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitDemoUITests.swift; sourceTree = "<group>"; };
 		C077A5A02110D2AA00A534E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C077A5B021112DA500A534E9 /* ARUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				C077A57C2110D2A900A534E9 /* AppDelegate.swift */,
+				C077A5B021112DA500A534E9 /* ARUtilities.swift */,
 				C077A57E2110D2A900A534E9 /* art.scnassets */,
 				C077A5802110D2A900A534E9 /* ViewController.swift */,
 				C077A5822110D2A900A534E9 /* Main.storyboard */,
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C077A5B121112DA500A534E9 /* ARUtilities.swift in Sources */,
 				C077A5812110D2A900A534E9 /* ViewController.swift in Sources */,
 				C077A57D2110D2A900A534E9 /* AppDelegate.swift in Sources */,
 			);
