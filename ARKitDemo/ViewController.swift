@@ -23,9 +23,6 @@ class ViewController: UIViewController {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
-        
-        // Set the scene to the view
-        sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {
