@@ -52,12 +52,11 @@ class ViewController: UIViewController {
 // MARK: - ARSCNViewDelegate
 extension ViewController: ARSCNViewDelegate {
     
-     // Override to create and configure nodes for anchors added to the view's session.
-     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
+    // Tells the delegate that a SceneKit node corresponding to a new AR anchor has been added
+    // to the scene. In this case, the plane.
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         DispatchQueue.main.async { [weak self] in
             self?.statusLabel.text = "Horizontal plane found!"
         }
-        return node
      }
 }
