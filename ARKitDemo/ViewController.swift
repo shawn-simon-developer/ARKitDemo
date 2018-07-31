@@ -58,5 +58,8 @@ extension ViewController: ARSCNViewDelegate {
         DispatchQueue.main.async { [weak self] in
             self?.statusLabel.text = "Horizontal plane found!"
         }
-     }
+        // Add plane anchor to session for less drift.
+        sceneView.session.add(anchor: anchor)
+        ARUtilities.createTempPlaneObjectFor(node: node, andAnchor: anchor)
+    }
 }
