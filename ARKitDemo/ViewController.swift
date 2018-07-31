@@ -64,6 +64,13 @@ class ViewController: UIViewController {
         let hitTransform = SCNMatrix4.init(hitResult.worldTransform)
         let hitVector = SCNVector3(hitTransform.m41, anchor.transform.columns.3.y, hitTransform.m43)
         statusLabel.text = "\(hitVector.x), \(hitVector.y), \(hitVector.z)"
+        createItem(position: hitVector)
+    }
+
+    func createItem(position: SCNVector3) {
+        let itemNode = SCNScene(named: "art.scnassets/Tree.scn")!.rootNode
+        itemNode.position = position
+        sceneView.scene.rootNode.addChildNode(itemNode)
     }
 }
 
