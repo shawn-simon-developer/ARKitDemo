@@ -23,6 +23,9 @@ class ViewController: UIViewController {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        sceneView.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +49,21 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
+    }
+
+    @objc func handleTap(tap: UITapGestureRecognizer) {
+        let results = self.sceneView.hitTest(tap.location(in: sceneView), types: [ARHitTestResult.ResultType.estimatedHorizontalPlane])
+        guard let hitResult = results.last else {
+            statusLabel.text = "Point on plane not valid."
+            return
+        }
+        guard let anchor = sceneView.session.currentFrame?.anchors.last else {
+            statusLabel.text = "No horizontal surface found yet."
+            return
+        }
+        let hitTransform = SCNMatrix4.init(hitResult.worldTransform)
+        let hitVector = SCNVector3(hitTransform.m41, anchor.transform.columns.3.y, hitTransform.m43)
+        statusLabel.text = "\(hitVector.x), \(hitVector.y), \(hitVector.z)"
     }
 }
 
