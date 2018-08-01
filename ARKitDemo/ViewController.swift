@@ -10,6 +10,15 @@ import UIKit
 import SceneKit
 import ARKit
 
+// Step 2: Setup UI. Configure session. Implemented required delegate method and update status
+//         label when plane is found.
+//
+// Step 3: Anchor session. Show temp plane for visual feedback when found.
+//
+// Step 4: Add tap gesture. Setup hit test. Update UI with found vector.
+//
+// Step 5: Add object to location when vector found from hit test.
+
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
