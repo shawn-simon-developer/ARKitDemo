@@ -61,8 +61,9 @@ class ViewController: UIViewController {
             statusLabel.text = "No horizontal surface found yet."
             return
         }
-        let hitTransform = SCNMatrix4.init(hitResult.worldTransform)
-        let hitVector = SCNVector3(hitTransform.m41, anchor.transform.columns.3.y, hitTransform.m43)
+        let hitVector = SCNVector3(hitResult.worldTransform.columns.3.x,
+                                   anchor.transform.columns.3.y,
+                                   hitResult.worldTransform.columns.3.z)
         statusLabel.text = "\(hitVector.x), \(hitVector.y), \(hitVector.z)"
         createItem(position: hitVector)
     }
